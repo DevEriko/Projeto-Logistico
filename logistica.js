@@ -21,3 +21,19 @@ function calcularCustoEnvio(peso, distancia, tipoTransporte) {
     return custoTotal;
 }
 
+function iniciarPrograma() {
+    const peso = parseFloat(document.getElementById('peso').value);
+    const distancia = parseFloat(document.getElementById('distancia').value);
+    const tipoTransporte = document.getElementById('tipoTransporte').value;
+
+    const custo = calcularCustoEnvio(peso, distancia, tipoTransporte);
+
+    const resultadoDiv = document.getElementById('resultado');
+    if (custo !== null) {
+        resultadoDiv.style.display = 'block';
+        resultadoDiv.innerHTML = `O custo total para transportar a carga é: R$${custo.toFixed(2)}`;
+    } else {
+        resultadoDiv.style.display = 'none';
+        alert("Não foi possível calcular o custo.")
+    }
+}
