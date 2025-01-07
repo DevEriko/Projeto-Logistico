@@ -10,7 +10,28 @@
 
 <body>
     <h1>Seja bem vindo ao Sistema Logístico</h1>
-    <p>Abra o console do navegador para interagir com o programa.</p>
+    <div class="content">
+        <p>Abra o console do navegador para interagir com o programa.</p>
+
+        <!-- Formulário de Entrada -->
+        <label for="peso">Peso da carga (em kg):</label>
+        <input type="number" id="peso" placeholder="Digite o peso" required>
+
+        <label for="tipoTransporte">Distância do Transporte (em km):</label>
+        <input type="number" id="distância" placeholder="Digite a distância" required>
+
+        <label for="tipoTransporte">Tipo de Transporte:</label>
+        <select id="tipoTransporte">
+            <option value="terrestre">Terrestre</option>
+            <option value="aéreo">Aéreo</option>
+            <option value="marítimo">Marítimo</option>
+        </select>
+
+        <button onclick="iniciarPrograma()">Calcular Custo</button>
+
+        <div id="resultado" class="result" style="display: none;"></div>
+    </div>
+
     <script src="logistica.js"></script>
 </body>
 
