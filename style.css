@@ -32,3 +32,33 @@ p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
+
+/* Estilo para as mensagens no console (substituindo o console.log no HTML) */
+.result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #eaf7e1;
+    border: 1px solid #4caf50;
+    color: #2c3e50;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Botões */
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
