@@ -15,4 +15,10 @@ function calcularCustoEnvio(peso, distancia, tipoTransporte) {
             console.log("Tipo de transporte inválido.");
             return null;
     }
+
+    // Cálculo do custo total
+    const custoTotal = (peso * custoPorKm) * distancia;
+    return custoTotal;
 }
+
+// 
