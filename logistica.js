@@ -1,39 +1,50 @@
-// Função para calcular o custo de envio.
 function calcularCustoEnvio(peso, distancia, tipoTransporte) {
     let custoPorKm;
     switch (tipoTransporte.toLowerCase()) {
         case "terrestre":
-            custoPorKm = 0.05; // Custo por km em transporte terrestre
+            custoPorKm = 0.05;
             break;
         case "aéreo":
-            custoPorKm = 0.1; // Custo por km em transporte aéreo
+            custoPorKm = 0.1;
             break;
         case "marítimo":
-            custoPorKm = 0.03; // Custo por km em transporte marítimo
+            custoPorKm = 0.03;
             break;
         default:
-            console.log("Tipo de transporte inválido.");
             return null;
     }
 
-    // Cálculo do custo total
-    const custoTotal = (peso * custoPorKm) * distancia;
-    return custoTotal;
+    return (peso * custoPorKm) * distancia;
 }
 
-function iniciarPrograma() {
+function exibirMensagem(idElemento, mensagem, tipo) {
+    const elemento = document.getElementById(idElemento);
+    elemento.style.display = 'block';
+    elemento.className = tipo === 'erro' ? 'error' : 'result';
+    elemento.innerHTML = mensagem;
+}
+
+function iniciarPrograma(event) {
+    event.preventDefault();
+
     const peso = parseFloat(document.getElementById('peso').value);
     const distancia = parseFloat(document.getElementById('distancia').value);
     const tipoTransporte = document.getElementById('tipoTransporte').value;
 
+    if (isNaN(peso) || isNaN(distancia) || peso <= 0 || distancia <= 0) {
+        exibirMensagem('erro', 'Por favor, insira valores válidos para peso e distância.', 'erro');
+        return false;
+    }
+
     const custo = calcularCustoEnvio(peso, distancia, tipoTransporte);
 
-    const resultadoDiv = document.getElementById('resultado');
     if (custo !== null) {
-        resultadoDiv.style.display = 'block';
-        resultadoDiv.innerHTML = `O custo total para transportar a carga é: R$${custo.toFixed(2)}`;
+        exibirMensagem('resultado', `O custo total para transportar a carga é: R$${custo.toFixed(2)}`, 'sucesso');
+        document.getElementById('erro').style.display = 'none';
     } else {
-        resultadoDiv.style.display = 'none';
-        alert("Não foi possível calcular o custo.")
+        exibirMensagem('erro', 'Tipo de transporte inválido.', 'erro');
+        document.getElementById('resultado').style.display = 'none';
     }
+
+    return false;
 }

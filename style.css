@@ -6,7 +6,6 @@ body {
     padding: 0;
 }
 
-/* Cabeçalho */
 h1 {
     text-align: center;
     color: #4caf50;
@@ -16,14 +15,12 @@ h1 {
     color: white;
 }
 
-/* Parágrafo informativo */
 p {
     text-align: center;
     color: #333;
     font-size: 18px;
 }
 
-/* Caixa de interação */
 .content {
     max-width: 500px;
     margin: 30px auto;
@@ -33,7 +30,17 @@ p {
     border-radius: 8px;
 }
 
-/* Estilo para as mensagens no console (substituindo o console.log no HTML) */
+.error {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+}
+
 .result {
     margin-top: 20px;
     padding: 10px;
@@ -45,7 +52,6 @@ p {
     border-radius: 5px;
 }
 
-/* Botões */
 button {
     display: block;
     width: 100%;
