@@ -21,4 +21,9 @@ function calcularCustoEnvio(peso, distancia, tipoTransporte) {
     return custoTotal;
 }
 
-// 
+// Funcão principal
+function iniciarPrograma() {
+    console.log("Seja Bem-vindo ao sistema de cálculo logístico!");
+
+
+}
