@@ -30,6 +30,8 @@ function iniciarPrograma() {
     const distancia = parseFloat(prompt("Digite a distância do transporte (em km): "));
     const tipoTransporte = prompt("Digite o tipo de transporte (terrestre, aéreo ou marítimo): ");
 
+    console.log("Peso:", peso, "Distância:", distancia, "Tipo de transporte:", tipoTransporte);  // Depuração
+
     // Calcular e exibir o custo de envio 
     const custo = calcularCustoEnvio(peso, distancia, tipoTransporte);
 
